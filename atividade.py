@@ -5,13 +5,19 @@ b) Quantidade de termos da PA
 c) Razão dessa PA
 Construa um programa para carregar e imprimir uma lista contendo os termos da PA, bem como a soma dos elementos da PA.
 '''
-PA = []
-t1 = input("Informe o 1º termo da PA: ")
-tn = input("Informe a quantidade de termos que terá essa PA: ")
-razao = input("Informe a razão dessa PA: ")
+termos_PA = []
+PA = 0
+termo = 0
+t1 = int(input("Informe o 1º termo da PA: "))
+termos_PA.append(t1)
+tn = int(input("Informe a quantidade de termos que terá essa PA: "))
+tn = tn-1
+razao = int(input("Informe a razão dessa PA: "))
 for i in range(tn):
-    termo = t1 + 
-    PA.append(termo)
-print(PA)    
+    termo +=razao
+    termos_PA.append(termo)
+print(termos_PA)    
+PA = t1 + ((tn - 1)*razao)
+print("O {}º termo dessa PA é: {}".format(tn,PA)) 
 
     
