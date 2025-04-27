@@ -1,24 +1,23 @@
-'''Questão 03 - Uma turma de formandos está vendendo rifas para angariar recursos financeiros para sua cerimônia de formatura. Construa um programa para cadastrar os nomes das pessoas que compraram a rifa.  Ao fim, o programa deve sortear o ganhador e imprimir o nome dele.
-Para desenvolver esse programa, observe o exemplo a seguir de como fazer o sorteio em uma lista:
+'''Questão 05 - Crie um programa que leia um valor N, tal que N>1. O programa deve gerar, aleatoriamente, uma lista L. Por fim, o programa deve calcular e imprimir a média geométrica dos N elementos da lista.
+Para desenvolver esse programa, observe o exemplo a seguir de como gerar uma lista com valores aleatórios no intervalo [1,10]:
+
+from random import randrange
 import random
-lista = [1,2,3,4,5]
-random.shuffle(lista)              #embaralha a lista
-sorteado = random.choice(lista)    #sorteia aleatoriamente um elemento
-print(sorteado)  
+#Gera uma lista contendo 5 elementos. Os elementos estão no intervalo [1,10]
+L = [randrange(1,11) for i in range(5)]
+print(L)
+ 
 '''
 
-rifa = []
-resp = "s"
-while True:
-    if resp.upper() == "S":
-        nome = input("Informe um nome: ")
-        rifa.append(nome)
-        resp = input("Gostaria de cadastrar mais um nome[S|N] ?")  
-    else:
-        break
-print("Os participantes do sorteio são:")
-print(rifa)
-import random
-random.shuffle(rifa)
-sorteado = random.choice(rifa)
-print("O ganhador foi: {}".format(sorteado))
+
+N = int(input("Informe um valor inteiro maior que 1: "))
+sorteados = []
+soma = 0
+if N > 1:
+    import random
+    L = [random.randrange(1,N) for i in range(3)]
+    print(L)
+else:
+    print("O valor digitado é menor ou igual a zero, NÃO PODE!!")
+media = sum(L)/len(L)
+print("A média dos valores sorteados é {}".format(media))
