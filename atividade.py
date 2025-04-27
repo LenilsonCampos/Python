@@ -9,13 +9,18 @@ termos_PA = []
 a1 = int(input("Informe o 1º termo da PA: "))
 termos_PA.append(a1)
 termo = a1
+soma = 0
 an = int(input("Informe a quantidade de termos que terá essa PA: "))
 razao = int(input("Informe a razão dessa PA: "))
 for i in range(1,an):
     termo +=razao
+    soma +=termo
     termos_PA.append(termo)
+print("Segue relação dos termos dessa PA: ")    
 print(termos_PA)    
 PA = a1 + ((an - 1)*razao)
 print("O {}º termo dessa PA é: {}".format(an,PA)) 
+soma = soma + a1
+print("A soma de todos os termos da PA é: {}".format(soma))
 
     
